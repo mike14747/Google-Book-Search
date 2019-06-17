@@ -4,7 +4,7 @@ const FontAwesome = require('react-fontawesome');
 export default function SearchResults(props) {
     return (
         <div className="my-4">
-            <h6 className="mt-5">{props.search_massage}</h6>
+            <h6 className="mt-5">{props.search_message}</h6>
             {props.books.map(book => {
                 return (
                     <div key={book.id} style={{border:"1px solid #4477aa"}} className="row no-gutters my-4">
@@ -16,7 +16,7 @@ export default function SearchResults(props) {
                                 </div>
                                 <div className="col-6 text-right">
                                     <a href={book.link} target="_blank" rel="noopener noreferrer" className="btn btn-warning px-3 m-2" role="button"><FontAwesome className='mr-2' name='eye' />View</a>
-                                    <button id={book.id} className="btn btn-light px-3 m-2" value="{book.id}" onClick={() => props.handleSaveButton(book.id)}><FontAwesome className='mr-2' name='bookmark' />Save Book</button>
+                                    <button id={book.id} className="btn btn-info px-3 m-2" value="{book.id}" onClick={() => props.handleSaveButton(book.id)}><FontAwesome className='mr-2' name='bookmark' />Save Book</button>
                                     
                                 </div>
                             </div>
@@ -29,7 +29,7 @@ export default function SearchResults(props) {
                         </div>
                     </div>
                 );
-            })};
+            })}
         </div>
     );
 }

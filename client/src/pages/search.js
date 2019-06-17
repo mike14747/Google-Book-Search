@@ -50,7 +50,7 @@ class Search extends Component {
                                 description: description,
                                 image: thumbnail,
                                 link: link
-                            }
+                            };
                             return result;
                         });
                         this.setState({ books: results });
@@ -63,7 +63,6 @@ class Search extends Component {
     handleSaveButton = id => {
         // console.log(id);
         let savedBooks = this.state.books.filter(book => book.id === id);
-        // console.log(savedBooks[0]);
         api.saveBook(savedBooks[0])
             .then(alert("Your book is saved"))
             .catch(err => console.log(err))
@@ -78,7 +77,7 @@ class Search extends Component {
                     handleSubmit={this.handleSubmit}
                     handleInputChange={this.handleInputChange}
                 />
-                <SearchResults books={this.state.books} handleSaveButton={this.handleSaveButton} search_massage={this.state.num_books_message} />
+                <SearchResults books={this.state.books} handleSaveButton={this.handleSaveButton} search_message={this.state.num_books_message} />
             </div>
         );
     }

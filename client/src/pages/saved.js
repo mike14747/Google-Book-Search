@@ -1,19 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
+import api from '../utils/api';
+import SavedResults from '../components/savedResults';
 
-function Saved() {
-    const styles = {
-        backgroundColor: "#ffffff"
+class Saved extends Component {
+    state = {
+        savedBooks: []
     };
 
-    // handleDelete = event => {
+    componentDidMount() {
+        api.getBooks()
+            .then(res => console.log("respnse from getBooks api call"))
+            .catch(err => console.log(err))
+    }
 
-    // }
+    handleDeleteButton = id => {
+        api.deleteBook(id)
+            .then(res => this.componentDidMount())
+            .catch(err => console.log(err))
+    }
 
-    return (
-        <div style={styles}>
-            <h3 className="p-2">View saved books here!</h3>
-        </div>
-    );
+    render() {
+        return (
+            <div>
+                <h3 className="p-2">Saved Books</h3>
+                <SavedResults savedBooks={this.state.savedBooks} handleDeleteButton={this.handleDeleteButton} />
+            </div>
+        );
+    }
 }
+
+// api.getBooks()
+// .then(res => this.setState({ savedBooks: res.data }))
+// .catch(err => console.log(err))
 
 export default Saved;

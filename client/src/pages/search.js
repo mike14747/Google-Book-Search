@@ -37,13 +37,13 @@ class Search extends Component {
                         }
                         this.setState({ num_books_message: books });
                         let results = res.data.items;
-                        results = results.map(result => {
+                        results = results.map((result, i) => {
                             const author = typeof result.volumeInfo.authors !== "undefined" ? result.volumeInfo.authors.join(", ") : "n/a";
                             const description = typeof result.volumeInfo.description !== "undefined" ? result.volumeInfo.description : "n/a";
                             const thumbnail = typeof result.volumeInfo.imageLinks.thumbnail !== "undefined" ? result.volumeInfo.imageLinks.thumbnail : "";
                             const link = typeof result.volumeInfo.infoLink !== "undefined" ? result.volumeInfo.infoLink : "";
                             result = {
-                                key: result.id,
+                                key: i,
                                 id: result.id,
                                 title: result.volumeInfo.title,
                                 author: author,
@@ -61,7 +61,6 @@ class Search extends Component {
     };
 
     handleSaveButton = id => {
-        // console.log(id);
         let savedBooks = this.state.books.filter(book => book.id === id);
         api.saveBook(savedBooks[0])
             .then(alert("Your book is saved"))

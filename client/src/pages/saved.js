@@ -9,7 +9,7 @@ class Saved extends Component {
 
     componentDidMount() {
         api.getBooks()
-            .then(res => console.log("respnse from getBooks api call"))
+            .then(res => this.setState({ savedBooks: res.data }))
             .catch(err => console.log(err))
     }
 
@@ -28,9 +28,5 @@ class Saved extends Component {
         );
     }
 }
-
-// api.getBooks()
-// .then(res => this.setState({ savedBooks: res.data }))
-// .catch(err => console.log(err))
 
 export default Saved;

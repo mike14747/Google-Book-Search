@@ -2,19 +2,17 @@ import React from "react";
 const FontAwesome = require('react-fontawesome');
 
 export default function SavedResults(props) {
-    const numSaved = props.savedBooks;
-    console.log("Length: ", numSaved.length);
-    return (numSaved.length === 0) ? (
+    return (props.savedBooks.length === 0) ? (
         <div className="my-4">
             You have no saved books!
         </div>
     ) : (
             <div className="my-4">
-                {props.savedBooks.map(book => {
+                {props.savedBooks.map((book, i) => {
                     return (
-                        <div key={book.id} style={{ border: "1px solid #4477aa" }} className="row no-gutters my-4">
+                        <div key={i} style={{ border: "1px solid #4477aa" }} className="row no-gutters my-4">
                             <div className="col-12">
-                                <h5 style={{ backgroundColor: "#4477aa" }} className="text-light p-2">{book.title}</h5>
+                                <h5  style={{ backgroundColor: "#4477aa" }} className="text-light p-2">{book.title}</h5>
                                 <div className="row no-gutters">
                                     <div className="col-6 p-2">
                                         <span className="font-weight-bolder small">Author(s): </span>{book.author}

@@ -18,14 +18,12 @@ const schema = new mongoose.Schema({
     },
     description: {
         type: String
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 });
 const Book = mongoose.model('Book', schema);
 
 module.exports = Book;
-
-// ,
-//     date: {
-//         type: Date,
-//         default: Date.now
-//     }

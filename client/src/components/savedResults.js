@@ -19,7 +19,7 @@ export default function SavedResults(props) {
                                     </div>
                                     <div className="col-6 text-right">
                                         <a href={book.link} target="_blank" rel="noopener noreferrer" className="btn btn-warning px-3 m-2" role="button"><FontAwesome className='mr-2' name='eye' />View</a>
-                                        <button id={book.id} className="btn btn-light px-3 m-2" value="{book.id}" onClick={() => props.handleDeleteButton(book.id)}><FontAwesome className='mr-2' name='trash-alt' />Delete Book</button>
+                                        <button id={book._id} className="btn btn-danger px-3 m-2" value="{book._id}" onClick={() => props.handleDeleteButton(book._id)}><FontAwesome className='mr-2' name='trash-alt' />Delete Book</button>
 
                                     </div>
                                 </div>

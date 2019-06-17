@@ -4,6 +4,7 @@ module.exports = {
     findAll: function (req, res) {
         db
             .find(req.query)
+            .sort({ date: -1 })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(400).json(err));
     },
@@ -21,12 +22,3 @@ module.exports = {
             .catch(err => res.status(400).json(err));
     }
 };
-
-// findAll: function (req, res) {
-//     res.send("it got through again");
-//     db
-//         .find(req.query)
-//         .sort({ date: -1 })
-//         .then(dbModel => res.json(dbModel))
-//         .catch(err => res.status(400).json(err));
-// }

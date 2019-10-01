@@ -1,0 +1,35 @@
+/*
+these button style are extensions of the bootstrap 4 btn class and must be used in addition to that class for extra styling... eg: like btn-teal could be used like btn-success, plus they can be used with bootstrap's btn-sm and btn-lg... which don't deal with colors (japanese indigo from cooler.co was the base color for the first indigo sample)
+*/
+
+.btn-indigo {
+    color: #d7dcdf;
+    background-color: #234150;
+    border-color: #0d181e;
+}
+  
+.btn-indigo:hover {
+    color: #0d181e;
+    background-color: #4b636f;
+    border-color: #234150;
+}
+  
+.btn-indigo:focus, .btn-indigo.focus {
+    box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
+}
+  
+.btn-indigo.disabled, .btn-indigo:disabled {
+    color: #37525f;
+    background-color: #87979f;
+    border-color: #5f747f;
+}
+  
+.btn-indigo:not(:disabled):not(.disabled):active, .btn-indigo:not(:disabled):not(.disabled).active, .show > .btn-indigo.dropdown-toggle {
+    color: #fff;
+    background-color: #545b62;
+    border-color: #4e555b;
+}
+  
+.btn-indigo:not(:disabled):not(.disabled):active:focus, .btn-indigo:not(:disabled):not(.disabled).active:focus, .show > .btn-indigo.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
+}

@@ -18,11 +18,7 @@ app.use(routes);
 
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks";
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useFindAndModify: false }, error => {
-    if (error) {
-        console.log(error);
-    } else {
-        console.log("Mongoose has connected to the db!");
-    }
+    console.log(error ? error : "Mongoose connected to the DB successfully!");
 });
 
 app.get("*", (req, res) => {

@@ -8,9 +8,9 @@ export default function SavedResults(props) {
         </div>
     ) : (
             <div className="my-4">
-                {props.savedBooks.map((book, i) => {
+                {props.savedBooks.map((book) => {
                     return (
-                        <div key={i} style={{ border: "1px solid #4477aa" }} className="row no-gutters my-4">
+                        <div key={book.id} style={{ border: "1px solid #4477aa" }} className="row no-gutters my-4">
                             <div className="col-12">
                                 <h5  style={{ backgroundColor: "#4477aa" }} className="text-light p-2">{book.title}</h5>
                                 <div className="row no-gutters">

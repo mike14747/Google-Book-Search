@@ -17,7 +17,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks";
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useFindAndModify: false }, error => {
+mongoose.connect(MONGODB_URI, { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false }, error => {
     console.log(error ? error : "Mongoose connected to the DB successfully!");
 });
 
